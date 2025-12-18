@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بنوتي نيره❤️🫂</title>
+  <style>
+    body {margin:0;font-family:Arial,sans-serif;background:#000;color:#fff;text-align:center}
+    .container{display:none;padding:20px}
+    img{max-width:90%;border-radius:12px;margin-top:20px}
+    .password-box{margin-top:40px}
+    input{padding:10px;font-size:18px;border-radius:6px;border:none}
+    button{padding:10px 20px;font-size:18px;margin-left:8px;background:#ff4081;border:none;border-radius:6px;color:#fff}
+    h1{margin-top:20px;font-size:36px}
+    p.message{font-size:20px;line-height:1.8;margin-top:20px}
+    .player{margin-top:20px}
+  </style>
+</head>
+<body>
+  <div class="password-box" id="gate">
+    <h2>ادخل كلمة السر</h2>
+    <input type="password" id="pass" placeholder="كلمة السر">
+    <button onclick="enter()">دخول</button>
+  </div>
+
+  <div class="container" id="content">
+    <h1>بنوتي نيره❤️🫂</h1>
+    <img src="https://i.postimg.cc/mgMF0sps/IMG-1512.jpg" alt="نيرة">
+    <div class="player">
+      <div id="player"></div>
+    </div>
+    <p class="message">
+      بنوتي نيره انا بحبك اوي اوي اوي قد الدنيا كلها.. <br>
+      نا عملتلك الموقع ده بنفسي هديه ليكي وطلع عيني عشان اعملو انفع مبرمج بردو.؟😂❤️❤️<br>
+      المهم احنا داخلين سنه جديده وانتي احلي حاجه ف حياتي ودنيتي كلها مراتي وبنتي وسندي ونور عيني<br>
+      حقيقي بحبك جدا وربنا يخليكي ليا يقلب ابوكي🫂❤️
+    </p>
+  </div>
+
+  <script>
+    let allowPlay=false;
+    function enter(){
+      if(document.getElementById('pass').value==="2025/9/27"){
+        allowPlay=true;
+        document.getElementById('gate').style.display='none';
+        document.getElementById('content').style.display='block';
+        if(window.player && player.playVideo){ player.playVideo(); }
+      } else { alert('كلمة السر غلط'); }
+    }
+  </script>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    let player;
+    function onYouTubeIframeAPIReady(){
+      player = new YT.Player('player', {
+        height:'180', width:'320',
+        videoId:'AGEB2jPo920',
+        playerVars:{controls:1},
+        events:{
+          onReady:function(e){ if(allowPlay){ e.target.playVideo(); } }
+        }
+      });
+    }
+  </script>
+</body>
+</html>
